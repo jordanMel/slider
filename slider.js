@@ -1,5 +1,6 @@
 
 var slideIndex,slides,dots;
+
 function initGallery(){
     slideIndex = 0;
     slides=document.getElementsByClassName("imageHolder");
@@ -30,6 +31,7 @@ function initGallery(){
 initGallery();
 function plusSlides(n) {
     moveSlide(slideIndex+n);
+	
 }
 function moveSlide(n){
     var i;
@@ -66,7 +68,8 @@ function moveSlide(n){
 
       
     }
-	reset();
+	clearInterval(timer);
+	setTimer();
 
 }
 
@@ -74,9 +77,5 @@ function setTimer(){
     timer=setInterval(function () {
         plusSlides(1) ;
     },3000);
-}
-function reset(){
-    timer=setInterval(function () {
-      },0);
 }
 setTimer();
